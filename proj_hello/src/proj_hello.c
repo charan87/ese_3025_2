@@ -33,9 +33,9 @@ int main(void) {
     Board_LED_Set(0, false);
     Board_LED_Set(1, false);
     Board_LED_Set(2, false);
-    //Board_LED_Set(0, TRUE);
-    //Board_LED_Set(1, TRUE);
-    //Board_LED_Set(2, TRUE);//
+    Board_LED_Set(0, TRUE);
+    Board_LED_Set(1, TRUE);
+    Board_LED_Set(2, TRUE);//
 #endif
 #endif
     // TODO: insert code here
@@ -45,18 +45,20 @@ int main(void) {
     // Enter an infinite loop, just incrementing a counter
     while(1)
     {
-    	uint8_t LEDNumber;
-    		Board_LED_Toggle(0);
-    	//}
-    	for(j=0;j<1e6;j++);
-    	//{
-		Board_LED_Toggle(1);
-    	//}
-    	for(j=0;j<1e6;j++);
-    	//{
-		Board_LED_Toggle(2);
-    	//}
-    	//}
+//    	uint8_t LEDNumber;
+    	  Board_LED_Set(0, false);
+    	  for(j=0;j<1e6;j++);
+    	  Board_LED_Set(0, TRUE);
+    	  for(j=0;j<1e6;j++);
+    	    Board_LED_Set(1, false);
+    	    for(j=0;j<1e6;j++);
+    	    Board_LED_Set(1, TRUE);
+    	    for(j=0;j<1e6;j++);
+    	    Board_LED_Set(2, false);
+    	    for(j=0;j<1e6;j++);
+    	    Board_LED_Set(2, TRUE);
+
+
 i++;
     }
     return 0;

@@ -29,7 +29,7 @@ all: proj_hello.axf
 proj_hello.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/home/mohammed/MCUXpresso/lpc_board_nxp_lpcxpresso_1769/Debug" -L"/home/mohammed/MCUXpresso/lpc_chip_175x_6x/Debug" -Xlinker -Map="proj_hello.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "proj_hello_Debug.ld" -o "proj_hello.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/Debug" -L"/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_chip_175x_6x/Debug" -Xlinker -Map="proj_hello.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "proj_hello_Debug.ld" -o "proj_hello.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
