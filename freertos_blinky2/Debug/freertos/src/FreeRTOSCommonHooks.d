@@ -1,8 +1,8 @@
 freertos/src/FreeRTOSCommonHooks.o freertos/src/FreeRTOSCommonHooks.d: \
  ../freertos/src/FreeRTOSCommonHooks.c \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/FreeRTOS.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/projdefs.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/example/inc/FreeRTOSConfig.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/FreeRTOS.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/projdefs.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/example/inc/FreeRTOSConfig.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_chip_175x_6x/inc/chip.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_chip_175x_6x/inc/lpc_types.h \
@@ -45,18 +45,18 @@ freertos/src/FreeRTOSCommonHooks.o freertos/src/FreeRTOSCommonHooks.d: \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_chip_175x_6x/inc/lpc_types.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/lpc_phy.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/portable.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/portmacro.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/mpu_wrappers.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/task.h \
- /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/list.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/portable.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/portmacro.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/mpu_wrappers.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/task.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/list.h \
  ../freertos/src/FreeRTOSCommonHooks.h
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/FreeRTOS.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/FreeRTOS.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/projdefs.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/projdefs.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/example/inc/FreeRTOSConfig.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/example/inc/FreeRTOSConfig.h:
 
 /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
@@ -142,14 +142,14 @@ freertos/src/FreeRTOSCommonHooks.o freertos/src/FreeRTOSCommonHooks.d: \
 
 /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/portable.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/portable.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/portmacro.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/portmacro.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/mpu_wrappers.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/mpu_wrappers.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/task.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/task.h:
 
-/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky/freertos/inc/list.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky2/freertos/inc/list.h:
 
 ../freertos/src/FreeRTOSCommonHooks.h:
