@@ -65,9 +65,7 @@ static void vLEDTask1(void *pvParameters)
  while (1)
 {
  Board_LED_Set(0, false);
- //LedState = (bool) !LedState;
  vTaskDelay(configTICK_RATE_HZ / 2);
- //vTaskDelay(configTICK_RATE_HZ / 2);
  /* About a 3Hz on/off toggle rate */
  Board_LED_Set(0, TRUE);
  vTaskDelay(configTICK_RATE_HZ / 1);
@@ -83,7 +81,6 @@ while (1)
  vTaskDelay(configTICK_RATE_HZ / 3);
  Board_LED_Set(1, TRUE);
  vTaskDelay(configTICK_RATE_HZ / 3.9);
- //vTaskDelay(configTICK_RATE_HZ / 2);       
  }
  }
 static void vLEDTask3(void *pvParameters)
@@ -92,7 +89,6 @@ while (1)
 {
  vTaskDelay(configTICK_RATE_HZ /4 );
  Board_LED_Set(2, false);
- //LedState = (bool) !LedState;
  vTaskDelay(configTICK_RATE_HZ / 5);
 Board_LED_Set(2, TRUE);
  vTaskDelay(configTICK_RATE_HZ /6 );
