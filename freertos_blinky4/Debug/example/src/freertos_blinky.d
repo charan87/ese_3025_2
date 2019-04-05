@@ -42,16 +42,16 @@ example/src/freertos_blinky.o example/src/freertos_blinky.d: \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_chip_175x_6x/inc/lpc_types.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/lpc_phy.h \
  /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/FreeRTOS.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/projdefs.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/example/inc/FreeRTOSConfig.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/portable.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/portmacro.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/mpu_wrappers.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/task.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/list.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/semphr.h \
- /home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/queue.h
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/FreeRTOS.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/projdefs.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/example/inc/FreeRTOSConfig.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/portable.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/portmacro.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/mpu_wrappers.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/task.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/list.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/semphr.h \
+ /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/queue.h
 
 /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
@@ -137,22 +137,22 @@ example/src/freertos_blinky.o example/src/freertos_blinky.d: \
 
 /home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/FreeRTOS.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/FreeRTOS.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/projdefs.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/projdefs.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/example/inc/FreeRTOSConfig.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/example/inc/FreeRTOSConfig.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/portable.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/portable.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/portmacro.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/portmacro.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/mpu_wrappers.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/mpu_wrappers.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/task.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/task.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/list.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/list.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/semphr.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/semphr.h:
 
-/home/mohammed/MCUXpresso/freertos_blinky4/freertos/inc/queue.h:
+/home/mohammed/work/git_stuff/ese_3025_2/ese_3025_2/freertos_blinky4/freertos/inc/queue.h:
