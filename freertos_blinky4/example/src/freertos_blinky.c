@@ -1,3 +1,95 @@
+/* Authors:
+ * @ charan87, mohammed abdul aziz
+* Here in this code we are using semaphore mutex to blink sequential leds with lpc1769 board
+*/
+#include "board.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+/* created semaphore referenced to this handle*/
+xSemaphoreHandle xSemaphore = 0;
+/* Sets up system hardware */
+static void prvSetupHardware(void)
+{
+SystemCoreClockUpdate();
+Board_Init();
+
+/* Initial LED state is off when TRUE
+ * Initial LED state is on when False
+ * LED0 refered to Redcolor
+ * LED1 Refered to Greencolor
+ * LED2 Refered to Bluecolor */
+
+Board_LED_Set(0, false);
+Board_LED_Set(1, false);
+Board_LED_Set(2, false);
+Board_LED_Set(0, TRUE);
+Board_LED_Set(1, TRUE);
+Board_LED_Set(2, TRUE);
+
+}
+
+/* Creating LED1 task */
+static void vLEDTask1(void *pvParameters) {
+while (1) {
+if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
+Board_LED_Set(0, false);
+vTaskDelay(configTICK_RATE_HZ / 1);
+Board_LED_Set(0, TRUE);
+xSemaphoreGive(xSemaphore);
+}
+}
+}
+/*Creating LED2 task  */
+static void vLEDTask2(void *pvParameters) {
+while (1) {
+if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
+Board_LED_Set(1, false);
+vTaskDelay(configTICK_RATE_HZ / 1);
+Board_LED_Set(1, TRUE);
+xSemaphoreGive(xSemaphore);
+}
+}
+}
+/* Creating LED3 task */
+static void vLEDTask3(void *pvParameters) {
+while (1) {
+if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
+Board_LED_Set(2, false);
+vTaskDelay(configTICK_RATE_HZ / 1);
+Board_LED_Set(2, TRUE);
+	 xSemaphoreGive(xSemaphore);
+
+}
+}
+}
+int main(void)
+{
+prvSetupHardware();
+/*creating semaphore Mutex*/
+xSemaphore = xSemaphoreCreateMutex();
+/* LED1 Task creating here */
+xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
+configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+(xTaskHandle *) NULL);
+/* LED2 Task creating here */
+xTaskCreate(vLEDTask2, (signed char *) "vTaskLed2",
+			configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+			(xTaskHandle *) NULL);
+/* LED3 Task creating here */
+xTaskCreate(vLEDTask3, (signed char *) "vTaskLed3",
+			configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+	(xTaskHandle *) NULL);
+/* Start the scheduler */
+vTaskStartScheduler();
+
+/* Should never arrive here */
+return 1;
+}
+
+/**
+* @}
+*/
 /*
 * @brief FreeRTOS Blinky example
 *
@@ -19,135 +111,4 @@
 * in the software without notification. NXP Semiconductors also makes no
 * representation or warranty that such application will be suitable for the
 * specified use without further testing or modification.
-*
-* @par
-* Permission to use, copy, modify, and distribute this software and its
-* documentation is hereby granted, under NXP Semiconductors' and its
-* licensor's relevant copyrights in the software, without fee, provided that it
-* is used in conjunction with NXP Semiconductors microcontrollers.  This
-* copyright, permission, and disclaimer notice must appear in all copies of
-* this code.
-*/
-
-#include "board.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-
-/*****************************************************************************
-* Private types/enumerations/variables
-****************************************************************************/
-
-/*****************************************************************************
-* Public types/enumerations/variables
-****************************************************************************/
-
-/*****************************************************************************
-* Private functions
-****************************************************************************/
-xSemaphoreHandle xSemaphore = 0;
-//xMutex = xSemaphoreCreateMutex();
-/* Sets up system hardware */
-static void prvSetupHardware(void)
-{
-SystemCoreClockUpdate();
-Board_Init();
-
-/* Initial LED0 state is off */
-
-Board_LED_Set(0, false);
-Board_LED_Set(1, false);
-Board_LED_Set(2, false);
-Board_LED_Set(0, TRUE);
-Board_LED_Set(1, TRUE);
-Board_LED_Set(2, TRUE);
-
-}
-
-/* LED2 toggle thread */
-static void vLEDTask1(void *pvParameters) {
-//bool LedState = false;
-//volatile static int j = 0 ;
-
-while (1) {
-	//xSemaphore = xSemaphoreCreateMutex();
-if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
-Board_LED_Set(0, false);
-vTaskDelay(configTICK_RATE_HZ / 1);
-//for(j=0;j<1e6;j++);
-Board_LED_Set(0, TRUE);
-xSemaphoreGive(xSemaphore);
-}
-}
-}
-static void vLEDTask2(void *pvParameters) {
-//bool LedState = false;
-//volatile static int j = 0 ;
-while (1) {
-	//xSemaphore = xSemaphoreCreateMutex();
-if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
-Board_LED_Set(1, false);
-vTaskDelay(configTICK_RATE_HZ / 1);
-//for(j=0;j<1e6;j++);
-Board_LED_Set(1, TRUE);
-xSemaphoreGive(xSemaphore);
-}
-}
-}
-static void vLEDTask3(void *pvParameters) {
-//bool LedState = false;
-//volatile static int j = 0 ;
-while (1) {
-//	xSemaphore = xSemaphoreCreateMutex();
-if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
-Board_LED_Set(2, false);
-vTaskDelay(configTICK_RATE_HZ / 1);
-//for(j=0;j<1e6;j++);
-Board_LED_Set(2, TRUE);
-	 xSemaphoreGive(xSemaphore);
-
-}
-/* About a 7Hz on/off toggle rate */
-//vTaskDelay(configTICK_RATE_HZ / 14);
-}
-}
-
-
-/*****************************************************************************
-* Public functions
-****************************************************************************/
-
-/**
-* @brief	main routine for FreeRTOS blinky example
-* @return	Nothing, function should not exit
-*/
-int main(void)
-{
-prvSetupHardware();
-vSemaphoreCreateBinary(xSemaphore);
-//xMutex = xSemaphoreCreateMutex();
-//xSemaphore = xSemaphoreCreateMutex();
-/* LED1 toggle thread */
-xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
-configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-(xTaskHandle *) NULL);
-
-/* LED2 toggle thread */
-	xTaskCreate(vLEDTask2, (signed char *) "vTaskLed2",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-				(xTaskHandle *) NULL);
-	xTaskCreate(vLEDTask3, (signed char *) "vTaskLed3",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-		(xTaskHandle *) NULL);
-
-/* UART output thread, simply counts seconds */
-/* Start the scheduler */
-vTaskStartScheduler();
-
-/* Should never arrive here */
-return 1;
-}
-
-/**
-* @}
 */
