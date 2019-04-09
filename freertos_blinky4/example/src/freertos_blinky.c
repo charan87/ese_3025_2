@@ -1,5 +1,5 @@
 /* Authors:
- * @ charan87, mohammed abdul aziz
+ * @ saicharan kunchala, mohammed abdul aziz
 * Here in this code we are using semaphore mutex to blink sequential leds with lpc1769 board
 */
 #include "board.h"
@@ -32,11 +32,13 @@ Board_LED_Set(2, TRUE);
 /* Creating LED1 task */
 static void vLEDTask1(void *pvParameters) {
 while (1) {
-if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
+	vTaskDelay(configTICK_RATE_HZ / 1);
+	if(xSemaphoreTake(xSemaphore,portMAX_DELAY)){
 Board_LED_Set(0, false);
 vTaskDelay(configTICK_RATE_HZ / 1);
 Board_LED_Set(0, TRUE);
 xSemaphoreGive(xSemaphore);
+vTaskDelay(configTICK_RATE_HZ / 1);
 }
 }
 }
@@ -48,6 +50,7 @@ Board_LED_Set(1, false);
 vTaskDelay(configTICK_RATE_HZ / 1);
 Board_LED_Set(1, TRUE);
 xSemaphoreGive(xSemaphore);
+vTaskDelay(configTICK_RATE_HZ / 1);
 }
 }
 }
@@ -59,7 +62,6 @@ Board_LED_Set(2, false);
 vTaskDelay(configTICK_RATE_HZ / 1);
 Board_LED_Set(2, TRUE);
 	 xSemaphoreGive(xSemaphore);
-
 }
 }
 }
@@ -68,13 +70,14 @@ int main(void)
 prvSetupHardware();
 /*creating semaphore Mutex*/
 xSemaphore = xSemaphoreCreateMutex();
+if(xSemaphore != NULL){
 /* LED1 Task creating here */
 xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
-configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 3UL),
 (xTaskHandle *) NULL);
 /* LED2 Task creating here */
 xTaskCreate(vLEDTask2, (signed char *) "vTaskLed2",
-			configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+			configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 2UL),
 			(xTaskHandle *) NULL);
 /* LED3 Task creating here */
 xTaskCreate(vLEDTask3, (signed char *) "vTaskLed3",
@@ -86,7 +89,7 @@ vTaskStartScheduler();
 /* Should never arrive here */
 return 1;
 }
-
+}
 /**
 * @}
 */
